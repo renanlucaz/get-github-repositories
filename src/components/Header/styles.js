@@ -15,6 +15,11 @@ const PageHeader = styled.header`
 
     svg {
         margin-left: 10px;
+        transition: 0.2s;
+    }
+
+    svg:hover {
+        transform: translateY(-3px);
     }
 
     @media (max-width: 420px) {

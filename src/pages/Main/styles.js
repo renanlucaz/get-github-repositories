@@ -24,6 +24,16 @@ export const Form = styled.form.attrs((props) => ({
             border: 1px solid red;
         }
     }
+
+    @media (max-width: 390px) {
+        flex-direction: column;
+
+        button {
+            height: 40px;
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+    }
 `;
 
 const rotate = keyframes`
@@ -52,6 +62,10 @@ export const SubmitButton = styled.button.attrs((props) => ({
     &[disabled] {
         cursor: not-allowed;
         opacity: 0.6;
+    }
+
+    &:hover {
+        background: #3c3c3c;
     }
 
     ${(props) =>
