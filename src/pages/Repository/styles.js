@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+`;
 
 export const Loading = styled.div`
     color: #fff;
@@ -8,6 +18,11 @@ export const Loading = styled.div`
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+    svg {
+        animation: ${rotate} 2s linear infinite;
+        color: #000;
+    }
 `;
 
 export const Owner = styled.header`
@@ -16,7 +31,7 @@ export const Owner = styled.header`
     align-items: center;
 
     a {
-        color: #7159c1;
+        color: #151515;
         font-size: 16px;
         text-decoration: none;
     }
@@ -78,7 +93,7 @@ export const IssueList = styled.ul`
                 color: #333;
 
                 &:hover {
-                    color: #7159c1;
+                    color: #151515;
                 }
             }
 

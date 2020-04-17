@@ -1,6 +1,8 @@
 import styled, { keyframes, css } from 'styled-components';
 
-export const Form = styled.form`
+export const Form = styled.form.attrs((props) => ({
+    disabled: props.error,
+}))`
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -11,6 +13,16 @@ export const Form = styled.form`
         padding: 10px 15px;
         border-radius: 4px;
         font-size: 16px;
+    }
+
+    p {
+        display: none;
+    }
+
+    &[disabled] {
+        input {
+            border: 1px solid red;
+        }
     }
 `;
 
@@ -28,7 +40,7 @@ export const SubmitButton = styled.button.attrs((props) => ({
     type: 'submit',
     disabled: props.loading,
 }))`
-    background: #7159c1;
+    background: #151515;
     border: 0;
     padding: 0 15px;
     margin-left: 10px;
@@ -67,8 +79,26 @@ export const List = styled.ul`
         }
 
         a {
-            color: #7139c1;
+            color: #151515;
             text-decoration: none;
+            transition: 0.2s;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        svg {
+            color: #dc3545;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        svg:hover,
+        a:hover {
+            transform: translateY(-2px);
         }
     }
 `;
